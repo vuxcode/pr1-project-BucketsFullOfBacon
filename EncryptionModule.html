@@ -1,9 +1,16 @@
 <script>
     // just figuring out how to "split" a string into an array
-    
-    var inputtedText = "Hello world"
-    var inputtedText = inputtedText.split('')
-    console.log (inputtedText)
-   
+    var inputtedText = "Hello world";
+    var asciiText = [];
+    var inputtedText = inputtedText.split('');
+    console.log (inputtedText);
+
+    asciiText[index] = inputtedText.charCodeAt(index);
+    function charToASCII() {
+        for (var index = 0; index < inputtedText.length; index++) {
+            asciiText[index] = inputtedText.charCodeAt(index);
+        }
+    }
+charToASCII(inputtedText)
 
 </script>
