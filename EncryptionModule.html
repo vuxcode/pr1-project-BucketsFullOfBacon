@@ -1,11 +1,9 @@
 <script>
-    // just figuring out how to "split" a string into an array
+    // Getting the basic function of the decryption to work before intergrateing it to the "main" program
     var inputtedText = "Hello world";
     var asciiText = [];
-    //var inputtedText = inputtedText.split('');
     console.log (inputtedText);
-
-    //asciiText[index] = inputtedText.charCodeAt(index);
+// the real kicker that took me a while to figure out was that despite what i thougt, i didn't need to split the string into an array because "s.charCodeAt" DO NOT work with arrays, or atleast i couldn't get it to work with one. but the "charToASCII" function automaticaly splits the string into an array as it converts it to ascii.
     function charToASCII() {
         for (var index = 0; index < inputtedText.length; index++) {
             asciiText[index] = inputtedText.charCodeAt(index);
