@@ -1,15 +1,26 @@
 <script>
     // Getting the basic function of the decryption to work before intergrateing it to the "main" program
-    var inputtedText = "Hello world";
+    var clearText = "Hello world";
+    var key = 10
     var asciiText = [];
-    console.log (inputtedText);
+    var encryptedText = [];
+
+    console.log (clearText);
 // the real kicker that took me a while to figure out was that despite what i thougt, i didn't need to split the string into an array because "s.charCodeAt" DO NOT work with arrays, or atleast i couldn't get it to work with one. but the "charToASCII" function automaticaly splits the string into an array as it converts it to ascii.
     function charToASCII() {
-        for (var index = 0; index < inputtedText.length; index++) {
-            asciiText[index] = inputtedText.charCodeAt(index);
+        for (var index1 = 0; index1 < clearText.length; index1++) {
+            asciiText[index1] = clearText.charCodeAt(index1);
         }
     }
-charToASCII(inputtedText)
-console.log (asciiText)
-
+    function encrypt() {
+        for (var index2 = 0; index2 < clearText.length; index2++) {
+            encryptedText[index2] = asciiText[index2] + key;
+        }
+    }
+charToASCII(clearText);
+console.log (asciiText);
+encrypt(asciiText);
+console.log (asciiText);
+encryptedText = encryptedText.join('');
+console.log (encryptedText);
 </script>
