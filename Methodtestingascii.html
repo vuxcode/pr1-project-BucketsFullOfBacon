@@ -1,13 +1,7 @@
 <script>
 
-    var inputtedText = "Hello world";
-    var index = 0;
-    //var inputtedText = inputtedText.split('');
-    console.log(inputtedText);
-
-    var asciiText = inputtedText.codePointAt(index);
-    console.log(inputtedText);
-    console.log(asciiText)
-
-// so it works when picking out characters out of a atring but not an array
+   var asciiText = [72, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100];
+   var encryptedText = String.fromCharCode(...asciiText);
+   
+console.log(encryptedText)
 </script>

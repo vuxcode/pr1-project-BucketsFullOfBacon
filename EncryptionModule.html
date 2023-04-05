@@ -17,10 +17,16 @@
             encryptedText[index2] = asciiText[index2] + key;
         }
     }
+    function backToChar() {
+        for (var index3 = 0; index3 < clearText.length; index3++) {
+            encryptedText[index3] = asciiText[index3] + key;
+        }
+    }
 charToASCII(clearText);
 console.log (asciiText);
 encrypt(asciiText);
 console.log (asciiText);
-encryptedText = encryptedText.join('');
-console.log (encryptedText);
+var bull = String.fromCharCode(encryptedText);
+//encryptedText = encryptedText.join('');
+console.log (bull);
 </script>
