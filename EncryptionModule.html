@@ -3,6 +3,7 @@
     var clearText = "Hello world";
     var key = 10
     var asciiText = [];
+    var encryptedASCII = [];
     var encryptedText = [];
 
     console.log (clearText);
@@ -14,7 +15,7 @@
     }
     function encrypt() {
         for (var index2 = 0; index2 < clearText.length; index2++) {
-            encryptedText[index2] = asciiText[index2] + key;
+            encryptedASCII[index2] = asciiText[index2] + key;
         }
     }
     function backToChar() {
@@ -25,8 +26,8 @@
 charToASCII(clearText);
 console.log (asciiText);
 encrypt(asciiText);
-console.log (asciiText);
-var bull = String.fromCharCode(encryptedText);
+console.log (encryptedASCII);
+encryptedText = String.fromCharCode(...encryptedASCII);
 //encryptedText = encryptedText.join('');
-console.log (bull);
+console.log (encryptedText);
 </script>
