@@ -1,35 +1,33 @@
 <script>
 
-    var clearText = "Isabelle Enell";
-    var key = prompt("Enter the key that will be used for this chipher, it must be a number greater then 0");
+    var clearText = prompt("Enter the text that you want to be encrypted");
+    var key = Number(prompt("Enter the key that will be used for this chipher, it must be a number greater then 0"));
     var asciiText = [];
     var encryptedASCII = [];
     var encryptedText = [];
     while (isNaN(key)) {
-        var key = prompt("You didn't enter a valid number, please enter a number greater then 0")
+        var key = Number(prompt("You didn't enter a valid number, please enter a number greater then 0"));
     }
     console.log(clearText);
     console.log(key)
 
     function charToASCII() {
-        for (var index1 = 0; index1 < clearText.length; index1++) {
-            asciiText[index1] = clearText.charCodeAt(index1);
+        for (var index = 0; index < clearText.length; index++) {
+            asciiText[index] = clearText.charCodeAt(index);
         }
     }
     function encrypt() {
-        for (var index2 = 0; index2 < clearText.length; index2++) {
-            encryptedASCII[index2] = asciiText[index2] + key;
+        for (var index = 0; index < clearText.length; index++) {
+            encryptedASCII[index] = asciiText[index] + key;
         }
     }
-    function backToChar() {
-        for (var index3 = 0; index3 < clearText.length; index3++) {
-            encryptedText[index3] = asciiText[index3] + key;
-        }
-    }
+
     charToASCII(clearText);
     console.log(asciiText);
     encrypt(asciiText);
     console.log(encryptedASCII);
     encryptedText = String.fromCharCode(...encryptedASCII);
+    document.write(encryptedText)
+    document.write("<br>", "<br>", "The key that you used was: ", key);
     console.log(encryptedText);
 </script>
