@@ -1,13 +1,16 @@
 <script>
-    // Getting the basic function of the decryption to work before intergrateing it to the "main" program
-    var clearText = "Hello world";
-    var key = 10
+
+    var clearText = "Isabelle Enell";
+    var key = prompt("Enter the key that will be used for this chipher, it must be a number greater then 0");
     var asciiText = [];
     var encryptedASCII = [];
     var encryptedText = [];
+    while (isNaN(key)) {
+        var key = prompt("You didn't enter a valid number, please enter a number greater then 0")
+    }
+    console.log(clearText);
+    console.log(key)
 
-    console.log (clearText);
-// the real kicker that took me a while to figure out was that despite what i thougt, i didn't need to split the string into an array because "s.charCodeAt" DO NOT work with arrays, or atleast i couldn't get it to work with one. but the "charToASCII" function automaticaly splits the string into an array as it converts it to ascii.
     function charToASCII() {
         for (var index1 = 0; index1 < clearText.length; index1++) {
             asciiText[index1] = clearText.charCodeAt(index1);
@@ -23,11 +26,10 @@
             encryptedText[index3] = asciiText[index3] + key;
         }
     }
-charToASCII(clearText);
-console.log (asciiText);
-encrypt(asciiText);
-console.log (encryptedASCII);
-encryptedText = String.fromCharCode(...encryptedASCII);
-//encryptedText = encryptedText.join('');
-console.log (encryptedText);
+    charToASCII(clearText);
+    console.log(asciiText);
+    encrypt(asciiText);
+    console.log(encryptedASCII);
+    encryptedText = String.fromCharCode(...encryptedASCII);
+    console.log(encryptedText);
 </script>
