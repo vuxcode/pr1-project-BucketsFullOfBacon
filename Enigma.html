@@ -1,79 +1,128 @@
+// creating the wellcome message and introduction to the user.
+
 <body>
     <section>
-    <h1>Wellcome to the Enigma encryption program!</h1>
-    <div>
+        <h1>Wellcome to the Enigma encryption program!</h1>
+        <div>
 
-        <h5>You can either encrypt text or decrypt text that was encrypted using this program.</h5>
-        <h5>Please select what module you want to use.</h5>
+            <h5>You can either encrypt text or decrypt text that was encrypted using this program.</h5>
+            <h5>Please select what module you want to use.</h5>
         </div>
     </section>
 </body>
+// Buttons that gives the user the option to choose between the en/decryption function.
 <button onclick="encryption()">Encryptionmodule</button>
 <button onclick="decryption()">Decryptionmodule</button>
+
 <script>
     function encryption() {
+
+        // creating the variables that will be needed and alos getting the data from the user.
+
         var clearText = prompt("Enter the text that you want to be encrypted");
         var key = Number(prompt("Enter the key that will be used for this chipher, it must be a number greater or lesser then 0"));
         var asciiText = [];
         var encryptedASCII = [];
         var encryptedText = [];
+
+        // a "while" check that forces the user to give a correct "key", a 0 is not valid due to that a 0 will not result in any "encryption".
+
         while (isNaN(key)) {
             var key = Number(prompt("You didn't enter a valid number, please enter a number greater then 0"));
         }
         while (key == 0) {
             var key = Number(prompt("You didn't enter a valid number, please enter a number that is not 0"));
         }
+
+        // logging for debugging purposes 
+
         console.log(clearText);
         console.log(key);
+
+        // this function is a loop that takes the inputed cleartext and converts each individual charachter to ASCII and saves them individualy in a new array.
 
         function charToASCII() {
             for (var index = 0; index < clearText.length; index++) {
                 asciiText[index] = clearText.charCodeAt(index);
             }
         }
+
+        // this function is a loop that "encrypts" the letter by changeing their values by adding the "key" to their value and saves it in a new array.
+
         function encrypt() {
             for (var index = 0; index < clearText.length; index++) {
                 encryptedASCII[index] = asciiText[index] + key;
             }
         }
+
+        //running the function that convert the text to ASCII and logging the new varible
+
         charToASCII(clearText);
         console.log(asciiText);
+
+        // running the function that "encrypts" the text and logging the result
+
         encrypt(asciiText);
         console.log(encryptedASCII);
+
+        // taking the array with the "encrypted" characters and converting it back to a string and then displaying the result and key.
+
         encryptedText = String.fromCharCode(...encryptedASCII);
         document.write(encryptedText);
         document.write("<br>", "<br>", "The key that you used was: ", key);
         console.log(encryptedText);
     }
     function decryption() {
+
+        // creating the variables that will be needed and alos getting the data from the user.
+
         var encryptedText = prompt("Enter the text that you want to be decrypted");
         var key = Number(prompt("Enter the key that was used to encrypt this message"));
         var asciiText = [];
         var encryptedASCII = [];
         var clearText = [];
+
+        // a "while" check that forces the user to give a correct "key".
+
         while (isNaN(key)) {
             var key = Number(prompt("You didn't enter a valid number, please enter a number greater then 0"));
         }
+
+        // logging for debugging purposes
+
         console.log(encryptedText);
-        console.log(key)
+        console.log(key);
+
+        // this function is a loop that takes the inputed encrypted text and converts each individual charachter to ASCII and saves them individualy in a new array.
 
         function charToASCII() {
             for (var index = 0; index < encryptedText.length; index++) {
                 encryptedASCII[index] = encryptedText.charCodeAt(index);
             }
         }
+
+        // this function is a loop that "decrypts" the letter by changeing their values by subtracting the "key" from their value and saves it in a new array.
+
         function decrypt() {
             for (var index = 0; index < encryptedASCII.length; index++) {
                 asciiText[index] = encryptedASCII[index] - key;
             }
         }
 
+        //running the function that convert the text to ASCII and logging the new varible
+
         charToASCII(encryptedText);
         console.log(encryptedASCII);
+
+        // running the function that "decrypts" the text and logging the result
+
         decrypt(encryptedASCII);
         console.log(asciiText);
+
+        // taking the array with the "decrypted" characters and converting it back to a string and then displaying the result and key.
+
         clearText = String.fromCharCode(...asciiText);
-        document.write(clearText)
+        document.write(clearText);
         document.write("<br>", "<br>", "The key that you used was: ", key);
         console.log(clearText);
     }
