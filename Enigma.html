@@ -1,2 +1,80 @@
-<!-- Start writing your project code in this file! -->
-// hello world
+<body>
+    <section>
+    <h1>Wellcome to the Enigma encryption program!</h1>
+    <div>
+
+        <h5>You can either encrypt text or decrypt text that was encrypted using this program.</h5>
+        <h5>Please select what module you want to use.</h5>
+        </div>
+    </section>
+</body>
+<button onclick="encryption()">Encryptionmodule</button>
+<button onclick="decryption()">Decryptionmodule</button>
+<script>
+    function encryption() {
+        var clearText = prompt("Enter the text that you want to be encrypted");
+        var key = Number(prompt("Enter the key that will be used for this chipher, it must be a number greater or lesser then 0"));
+        var asciiText = [];
+        var encryptedASCII = [];
+        var encryptedText = [];
+        while (isNaN(key)) {
+            var key = Number(prompt("You didn't enter a valid number, please enter a number greater then 0"));
+        }
+        while (key == 0) {
+            var key = Number(prompt("You didn't enter a valid number, please enter a number that is not 0"));
+        }
+        console.log(clearText);
+        console.log(key);
+
+        function charToASCII() {
+            for (var index = 0; index < clearText.length; index++) {
+                asciiText[index] = clearText.charCodeAt(index);
+            }
+        }
+        function encrypt() {
+            for (var index = 0; index < clearText.length; index++) {
+                encryptedASCII[index] = asciiText[index] + key;
+            }
+        }
+        charToASCII(clearText);
+        console.log(asciiText);
+        encrypt(asciiText);
+        console.log(encryptedASCII);
+        encryptedText = String.fromCharCode(...encryptedASCII);
+        document.write(encryptedText);
+        document.write("<br>", "<br>", "The key that you used was: ", key);
+        console.log(encryptedText);
+    }
+    function decryption() {
+        var encryptedText = prompt("Enter the text that you want to be decrypted");
+        var key = Number(prompt("Enter the key that was used to encrypt this message"));
+        var asciiText = [];
+        var encryptedASCII = [];
+        var clearText = [];
+        while (isNaN(key)) {
+            var key = Number(prompt("You didn't enter a valid number, please enter a number greater then 0"));
+        }
+        console.log(encryptedText);
+        console.log(key)
+
+        function charToASCII() {
+            for (var index = 0; index < encryptedText.length; index++) {
+                encryptedASCII[index] = encryptedText.charCodeAt(index);
+            }
+        }
+        function decrypt() {
+            for (var index = 0; index < encryptedASCII.length; index++) {
+                asciiText[index] = encryptedASCII[index] - key;
+            }
+        }
+
+        charToASCII(encryptedText);
+        console.log(encryptedASCII);
+        decrypt(encryptedASCII);
+        console.log(asciiText);
+        clearText = String.fromCharCode(...asciiText);
+        document.write(clearText)
+        document.write("<br>", "<br>", "The key that you used was: ", key);
+        console.log(clearText);
+    }
+</script>
