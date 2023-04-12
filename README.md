@@ -48,6 +48,7 @@ the ¨key¨ that the program uses to encrypt the text, after the user inputs the
 
 This program encrypts or decrypts text using a simple displacement chipher.
 When encrypting the program takes the inputed text then it converts the characters into ascii numbers and saves them in an array, then the program "encrypts" the text by adding the key to the numberical value of each character in the array. Then the program converts the ascii values back into characters and back into a string that then is displayd along with the key for the user.
+
 The decrypting function functions in the same way, the only difference is what each variable is called and instead of adding the value of the key, the program removes the value of the key from each character value.
 
 # User Guide
