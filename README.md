@@ -44,8 +44,18 @@ the ¨key¨ that the program uses to encrypt the text, after the user inputs the
 1. The user will be able to encrypt or decrypt text with the program.
 2. The program will use a displacement type chipher.
 
-<!-- WRITE A LIST OF PROMISES FOR WHAT THE USER WILL BE ABLE TO DO IN THE PROGRAM; BE OPEN AND HONEST! WHAT DO YOU THINK YOU CAN DO BEFORE THE DEADLINE -->
+# Project Summary
 
+This program encrypts or decrypts text using a simple displacement chipher.
+When encrypting the program takes the inputed text then it converts the characters into ascii numbers and saves them in an array, then the program "encrypts" the text by adding the key to the numberical value of each character in the array. Then the program converts the ascii values back into characters and back into a string that then is displayd along with the key for the user.
+The decrypting function functions in the same way, the only difference is what each variable is called and instead of adding the value of the key, the program removes the value of the key from each character value.
 
+# User Guide
 
-<!-- MAKE SUGGESTIONS FOR WHAT THE PROGRAM WILL NOT BE ABLE TO DO. WHAT MIGHT A USER EXPECT TO DO WITH YOUR PROGRAM THAT YOU DON'T THINK WILL BE POSSIBLE TO DO BEFORE THE DEADLINE. WRITE A CLEAR LIST OF THINGS -->
+This program can encrypt text that you input into it, and also decrypt text that was encrypted by it.
+
+To use it:
+1: Choose if you want to encrypt or decrypt text.
+2: Enter the text to be encrypted or decrypted.
+3: Enter the key, if you are encrypting make up a number, it can be any number that is either possitive or negative as long as it is not 0.
+If decrypting enter the key that was used to encrypt the text.
