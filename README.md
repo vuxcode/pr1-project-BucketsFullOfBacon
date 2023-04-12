@@ -55,7 +55,7 @@ The decrypting function functions in the same way, the only difference is what e
 This program can encrypt text that you input into it, and also decrypt text that was encrypted by it.
 
 To use it:
-1: Choose if you want to encrypt or decrypt text.
-2: Enter the text to be encrypted or decrypted.
-3: Enter the key, if you are encrypting make up a number, it can be any number that is either possitive or negative as long as it is not 0.
+1. Choose if you want to encrypt or decrypt text.
+2. Enter the text to be encrypted or decrypted.
+3. Enter the key, if you are encrypting make up a number, it can be any number that is either possitive or negative as long as it is not 0.
 If decrypting enter the key that was used to encrypt the text.
