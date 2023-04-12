@@ -1,4 +1,7 @@
-// creating the wellcome message and introduction to the user.
+<meta name="color-scheme" content="dark">
+
+
+<!--  Creating the wellcome message and introduction to the user. -->
 
 <body>
     <section>
@@ -10,7 +13,7 @@
         </div>
     </section>
 </body>
-// Buttons that gives the user the option to choose between the en/decryption function.
+<!-- Buttons that gives the user the option to choose between the en/decryption function. -->
 <button onclick="encryption()">Encryptionmodule</button>
 <button onclick="decryption()">Decryptionmodule</button>
 
@@ -27,10 +30,7 @@
 
         // a "while" check that forces the user to give a correct "key", a 0 is not valid due to that a 0 will not result in any "encryption".
 
-        while (isNaN(key)) {
-            var key = Number(prompt("You didn't enter a valid number, please enter a number greater then 0"));
-        }
-        while (key == 0) {
+        while (isNaN(key) || key == 0) {
             var key = Number(prompt("You didn't enter a valid number, please enter a number that is not 0"));
         }
 
